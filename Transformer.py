@@ -15,3 +15,6 @@ class Transformer(nn.Moudule):
         encoder_out  = self.encoder(x ,src_mask)
         decoder_out = self.decoder(x , encoder_out ,src_mask , tgt_mask)
         
+        out = self.fc(decoder_out)
+        
+        return out
